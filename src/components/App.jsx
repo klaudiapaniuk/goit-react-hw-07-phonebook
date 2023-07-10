@@ -1,7 +1,7 @@
 import styles from './App.module.css';
-
 import { Form } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
+import { ContactListItem } from './ContactListItem/ContactListItem';
 import { Filter } from './Filter/Filter';
 
 export const App = () => {
@@ -12,7 +12,9 @@ export const App = () => {
 
       <h2>Contacts</h2>
       <Filter />
-      <ContactList />
+      <ContactList>
+        <ContactListItem />
+      </ContactList>
     </div>
   );
 };

@@ -1,23 +1,16 @@
-import PropTypes from 'prop-types';
-import styles from './ContactListItem.module.css';
-
-import { deleteContact } from 'redux/contactsSlice';
 import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/operations';
 
 export const ContactListItem = ({ contact }) => {
   const dispatch = useDispatch();
 
   return (
-    <li className={styles.item_list}>
-      <span>{contact.name}</span>
-      <span>: {contact.number}</span>{' '}
+    <>
+      <span>{contact.name}: </span>
+      <span>{contact.phone}</span>
       <button onClick={() => dispatch(deleteContact(contact.id))}>
         Delete
       </button>
-    </li>
+    </>
   );
-};
-
-ContactListItem.propTypes = {
-  contact: PropTypes.objectOf(PropTypes.string).isRequired,
 };
